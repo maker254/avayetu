@@ -1,0 +1,15 @@
+Django==4.1.*
+django-sql-explorer==2.*
+django-import-export==2.6.*
+django_tables2==2.4.*
+django-crispy-forms==1.13.*
+django-select2==7.9.*
+django-filter==21.*
+django-simple-history==3.0.*
+djangorestframework==3.14.*
+requests==2.27.*
+python-dateutil==2.8.*
+pyserial==3.5
+schedule==1.1.0
+sqlparse==0.4.2
+googlemaps==4.10.0

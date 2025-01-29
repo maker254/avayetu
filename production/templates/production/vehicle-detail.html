@@ -1,0 +1,40 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container" style="margin-top: 10px !important;">
+    <div class="model-image" style="margin-left: 10px !important; float: left !important;"><img src="{% static 'images/fi1217r.jpg' %}" /></div>
+    <div class="vehicle-details" style="width: 600px !important; margin-left: 430px !important;">
+        <table style="position: fixed;width: 600px !important; margin-top: 50px !important;">
+            <tbody>
+                <tr>
+                    <th style="text-align:left !important;">Model   :</th>
+                    <td colspan="5" style="text-align:left !important;">{{vehicle.model}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left !important; width: 76px !important;">Vin Number:</th>
+                    <td colspan="5" style="text-align:left !important;">{{vehicle.vin_no}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left !important;">Lot Number:</th>
+                    <td colspan="5" style="text-align:left !important;">{{vehicle.lot}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left !important; vertical-align: top !important;">End of Line:</th>
+                    <th style="text-align:left !important; width: 100px !important;">Wheel Alignment<input type="checkbox"></td>
+                    <th style="text-align:center !important; width: 100px !important;">Brake Test <input type="checkbox"></th>
+                    <th style="text-align:center !important; width: 100px !important;">Road Test <input type="checkbox"></th>
+                    <th style="text-align:center !important; width: 100px !important;">Diagnosis <input type="checkbox"></th>
+                    <th style="text-align:center !important; width: 100px !important;">Quality Check <input type="checkbox"></th>
+                </tr>
+                <tr>
+                    <th style="text-align:left !important;">Status:</th>
+                    <td colspan="5" style="text-align:left !important;">Ready For Dispatch</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}

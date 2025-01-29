@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="container">
+    <form method="POST" action="">
+    {{form.media}}
+    {{form.errors}}
+    {% csrf_token %}
+    <table class="table table-striped table-bordered table-hover table-minimal">
+        <thead>
+            <tr>
+                <th colspan="7" style="font-size: 0.92rem !important; font-weight: 200 !important; font-family: Gill Sans;">End Of Line</th>
+            </tr>
+            <tr style="background-color: #3d3737 !important; color: white;">
+                <th>VIN Number</th>
+                <th>WheelAlignment</th>
+                <th>BrakeTest</th>
+                <th>Diagnosis</th>
+                <th>Road Test<th>
+                <th>QC</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="display: none !important;"> <!-- Use this for admin front data entry of individual genealogy data manuallly-->
+                <td>{{form.vehicle}}</td>
+                <td>{{form.wheelAlignment}}</td>
+                <td>{{form.brakeTest}}</td>
+                <td>{{form.diagnosis}}</td>
+                <td>{{form.roadTest}}</td>
+                <td>{{form.qc}}</td>
+                <td>{{form.remarks}}</td>
+            </tr>
+            <tr>
+                <td colspan="9" class="text-left">
+                    <input  class="btn btn-success btn-form"  type="submit" name="submit" value="Submit" style="border-radius: 2.5px !important; width: 75px !important; height: 22px !important; margin-left: 2px; font-size: 0.9rem !important;" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+
+</div>
+
+{% endblock %}

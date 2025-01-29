@@ -1,0 +1,62 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="container">
+    <form method="POST" action="">
+    {{form.media}}
+    {{form.errors}}
+    {% csrf_token %}
+    <table class="table table-striped table-bordered table-hover table-minimal">
+        <thead>
+            <tr>
+                <th colspan="9" style="font-size: 0.92rem !important; font-weight: 200 !important; font-family: Gill Sans;">Vehicle Details</th>
+            </tr>
+            <tr style="background-color: #3d3737 !important; color: white;">
+                <th>Model</th>
+                <th>Lot</th>
+                <th>VIN Number</th>
+                <th>Engine No.</th>
+                <th>Gear Box No.</th>
+                <th>Front Axle No.</th>
+                <th>1st Rear Axle No.</th>
+                <th>2nd Rear Axle No.</th>
+                <th>Cabin No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="display: none !important;"> <!-- Use this for admin front data entry of individual genealogy data manuallly-->
+                <td>{{form.model}}</td>
+                <td>{{form.lot}}</td>
+                <td>{{form.vin_no}}</td>
+                <td>{{form.engine_no}}</td>
+                <td>{{form.gearbox_no}}</td>
+                <td>{{form.front_axle_no}}</td>
+                <td>{{form.rear_axle1_no}}</td>
+                <td>{{form.rear_axle2_no}}</td>
+                <td>{{form.cabin_no}}</td>
+            </tr>
+            {% for data in vehicle_data %}
+            <tr>
+                <td>{{data.model}}</td>
+                <td>{{data.lot}}</td>
+                <td><a href="{% url 'production:vehicledetail' data.id %}">{{data.vin_no}} </a></td>
+                <td>{{data.engine_no}}</td>
+                <td>{{data.gearbox_no}}</td>
+                <td>{{data.front_axle_no}}</td>
+                <td>{{data.rear_axle1_no}}</td>
+                <td>{{data.rear_axle2_no}}</td>
+                <td>{{data.cabin_no}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="9" class="text-left">
+                    <input  class="btn btn-success btn-form"  type="submit" name="submit" value="Submit" style="border-radius: 2.5px !important; width: 75px !important; height: 22px !important; margin-left: 2px; font-size: 0.9rem !important;" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+
+</div>
+
+{% endblock %}
